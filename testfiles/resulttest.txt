@@ -1,0 +1,10 @@
+C:\wamp\www\snapspot>phpunit --bootstrap php\Parametres.class.php testfiles\Test.php
+PHPUnit 5.7.20 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 779 ms, Memory: 8.50MB
+
+OK (3 tests, 3 assertions)
+
+C:\wamp\www\snapspot>

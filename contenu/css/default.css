@@ -1,0 +1,253 @@
+/* Styles généraux */
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@font-face {
+    font-family: Pacifico;
+    src: url('fonts/Pacifico.ttf');
+}
+
+@keyframes zoom {
+    from {
+            transform: scale(1);
+        }
+    25% {
+            transform: scale(1.25);
+    }
+    50% {
+            transform: scale(0.75);
+        }
+    75% {
+            transform: scale(1.4);
+    }
+    100% {
+            transform: scale(1);
+        }
+}
+     
+.cameraico {
+        animation: zoom 1.5s infinite;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding-top: 3px;
+    margin: 0;
+    overflow: auto;
+    position: relative;
+    background: url('accueil.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    font-family: Pacifico, Arial, sans-serif;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px #363636;
+}
+
+.heading {
+    font-family: Pacifico, Arial, sans-serif;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px #363636;
+}
+
+a.heading {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eeeeee;
+}
+
+label[for] {
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 1px 2px #363636;
+}
+
+label[for=""] {
+    cursor: default;
+    text-shadow: 0 1px 2px #363636;
+}
+
+
+/** Floute le fond */
+body:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    /*background: url(../img/background.png) no-repeat center center fixed;*/
+    background: url('accueil.jpg') no-repeat center center fixed;
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+#main-container {
+    min-height: 100%;
+    margin-bottom: -40px;
+    padding-bottom: 30px;
+}
+
+footer {
+    color: #FFFFFF;
+    text-align: center;
+    margin: 10px auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/** Front */
+#explain {
+    font-family: Pacifico, Arial, sans-serif;
+    text-shadow: 0 3px 5px #363636;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Boutons d'uploads */
+.upload-button {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: transparent;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    -ms-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+}
+
+.upload-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: transparent;
+}
+
+#send-files {
+    margin-left: 80px;
+}
+
+.upload-button i {
+    font-size: 58px;
+}
+
+#preview {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* PrÃ©visualisation des images */
+.gallery-item, .dz-preview {
+    float: left;
+    max-width: 200px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition-property: margin-bottom, opacity, visibility;
+    transition-duration: 150ms, 150ms, 0s;
+    transition-timing-function: ease-in-out, ease-in-out, linear;
+    opacity: 1;
+}
+
+/* Cache les erreurs d'uploads */
+.dz-error.dz-preview {
+    display: none;
+}
+
+/* Preview */
+.dz-details {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dz-details .controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.dz-success-mark, .dz-error-mark {
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    -ms-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 190%;
+}
+
+.dz-error-mark {
+    color: #a94442;
+}
+
+.dz-success-mark {
+    color: #3c763d;
+}
+
+.dz-error .dz-error-mark {
+    opacity: 1;
+}
+
+/* Barre de progression */
+.progress {
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    -ms-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    margin: 5px;
+    opacity: 0.9;
+}
+
+.dz-success .progress {
+    opacity: 0;
+}
+
+/** Administration */
+#admin-form .progress {
+    margin-bottom: 0;
+}
+
+#admin-form .progress span {
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 2px 8px;
+}
+
+.input-group-addon.btn.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.input-group-addon.btn.btn-primary:hover {
+    color: #fff;
+    background-color: #3071a9;
+    border-color: #285e8e;
+}
